@@ -1,9 +1,10 @@
 # rome2_luaprofiler
 
-Profiles turn times. 
-You can set it to profile other things.
+Profiles execution of lua and game C functions.
 
-[Click to see example](example/rome2_luaprofiler.report.txt)
+At the moment it profiles from `FactionTurnStart` to `FactionTurnStart`.
+
+[Click to see example report](example/rome2_luaprofiler.report.txt)
 
 ### Load order
 Load on top
