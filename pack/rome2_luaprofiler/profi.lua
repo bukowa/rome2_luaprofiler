@@ -29,14 +29,14 @@
 local ProFi = {}
 local onDebugHook, sortByDurationDesc, sortByCallCount, getTime
 local DEFAULT_DEBUG_HOOK_COUNT = 0
-local FORMAT_HEADER_LINE       = "| %-50s: %-40s: %-20s: %-12s: %-12s: %-12s|\n"
+local FORMAT_HEADER_LINE       = "| %-99s: %-80s: %-20s: %-12s: %-12s: %-12s|\n"
 local FORMAT_OUTPUT_LINE       = "| %s: %-12s: %-12s: %-12s|\n"
 local FORMAT_INSPECTION_LINE   = "> %s: %-12s\n"
 local FORMAT_TOTALTIME_LINE    = "| TOTAL TIME = %f\n"
 local FORMAT_MEMORY_LINE 	   = "| %-20s: %-16s: %-16s| %s\n"
 local FORMAT_HIGH_MEMORY_LINE  = "H %-20s: %-16s: %-16sH %s\n"
 local FORMAT_LOW_MEMORY_LINE   = "L %-20s: %-16s: %-16sL %s\n"
-local FORMAT_TITLE             = "%-50.50s: %-40.40s: %-20s"
+local FORMAT_TITLE             = "%-99.99s: %-80.80s: %-20s"
 local FORMAT_LINENUM           = "%4i"
 local FORMAT_TIME              = "%04.3f"
 local FORMAT_RELATIVE          = "%03.2f%%"
