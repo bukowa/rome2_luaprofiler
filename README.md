@@ -15,3 +15,5 @@ Should be compatible with all mods that don't modify `all_scripted.lua`
 
 ### Notes
 Should work for other TW games too.
+
+![chatgpt](rome2_luaprofiler.png)
