@@ -12,8 +12,8 @@ copy: build
 	cp ${IMG_FILE_NAME} "C:\Games\Total War - Rome 2\data"
 
 copy-steam: build
-	cp ${MOD_FILE_NAME} "C:\Program Files (x86)\Steam\steamapps\common\Total War Rome II"
-	cp ${IMG_FILE_NAME} "C:\Program Files (x86)\Steam\steamapps\common\Total War Rome II"
+	cp ${MOD_FILE_NAME} "C:\Program Files (x86)\Steam\steamapps\common\Total War Rome II\data"
+	cp ${IMG_FILE_NAME} "C:\Program Files (x86)\Steam\steamapps\common\Total War Rome II\data"
 
 
 release: build copy-steam
