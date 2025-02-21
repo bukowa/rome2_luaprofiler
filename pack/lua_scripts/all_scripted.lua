@@ -17,32 +17,20 @@ print(events, #events)
 for n,v in ipairs(events.historical_events) do print(n, v) end
 --]]
 
-log = require("script._lib.lib_logging").new_logger("rome2_luaprofiler", "rome2_luaprofiler.txt", "DEBUG")
-package.path = package.path .. ";rome2_luaprofiler/?.lua"
+package.path = package.path .. ";script/profi/?.lua"
+profi = require("profi")
 
-log:info("Profiler script initialized")
+is_profiling = false
 
-local ProFi = log:require("rome2_luaprofiler.profi")
-local scripting = require("lua_scripts.episodicscripting")
-local is_profiling = false  -- Global flag
-
-local function handle_profiling(context)
-    log:pcall(function()
-        if context:faction():is_human() then
-            if not is_profiling then
-                ProFi:start()
-                is_profiling = true
-                log:info("Profiler started")
-            else
-                ProFi:stop()
-                ProFi:writeReport("rome2_luaprofiler.report.txt")
-                is_profiling = false
-                log:info("Profiler stopped")
-            end
+table.insert(events.FactionTurnStart, function(context)
+    if context:faction():is_human() then
+        if not is_profiling then
+            profi:start()
+            is_profiling = true
+        else
+            profi:stop()
+            profi:writeReport("rome2_luaprofiler.report.txt")
+            is_profiling = false
         end
-    end)
-end
-
-scripting.AddEventCallBack("FactionTurnStart", handle_profiling)
-
-log:info("Profiler script loaded")
+    end
+end)
